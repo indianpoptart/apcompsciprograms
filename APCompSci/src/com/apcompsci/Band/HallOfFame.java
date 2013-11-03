@@ -22,6 +22,7 @@ public class HallOfFame {
 		String searchResponse = scan.next();
 		//asks user for choice a answers
 		if(searchResponse.equalsIgnoreCase("A")){
+			//band name search incomplete
 			System.out.println("Tell me the band name");
 			String nameOfBand = scan.next();
 			for(int i = 0; i <= bandList.size(); i++){
@@ -43,6 +44,7 @@ public class HallOfFame {
 				search();
 			}
 		}
+		//this search is incomplete
 		else if(searchResponse.equalsIgnoreCase("B")){
 			System.out.println("Tell me a band member");
 			String bandMember = scan.next();
@@ -76,7 +78,7 @@ public class HallOfFame {
 		System.out.println("D: Clear Hall of Fame");
 		System.out.println("E: Search");
 		System.out.println("F: Quit");
-		System.out.println("G: Open file");
+		System.out.println("G: Open file");//do not need
 		String answer = scan.next();
 
 		if(answer.equalsIgnoreCase("A")){
@@ -147,7 +149,7 @@ public class HallOfFame {
 			System.exit(0);
 		}
 		else if(answer.equalsIgnoreCase("G")){
-			IO.openFile();
+			IO.openFile();//Is this neccesary
 		}
 		else {
 			hall();
