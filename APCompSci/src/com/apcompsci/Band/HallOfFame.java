@@ -58,7 +58,7 @@ public class HallOfFame {
 			System.out.println("Tell me something to search");
 			searchResponse = scan.next();
 			if(searchResponse.equalsIgnoreCase("Year")){
-				
+				System.out.println("What year would you like to search for");
 			}
 		}
 
