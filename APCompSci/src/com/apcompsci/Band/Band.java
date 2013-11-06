@@ -45,10 +45,40 @@ public class Band
     {
         numberOfMembers = num;
     }
+    public void setNameOfMembers(String names){
+    	nameOfMembers = names;
+    }
     public void setnameOfMembers(String memberName){
     	nameOfMembers = memberName;
     }
-    
+    public void setAlbums(int alb){
+    	numberOfAlbums = alb;
+    }
+    public void isActive(boolean active){
+    	isActive = active;
+    }
+    public String toString(){
+    	String output = "";
+    	output += "Name: " + nameOfBand + "\n";
+    	output += "Genre of " + nameOfBand + ": " + genreOfBand + "\n";
+    	output += "Number of members: " + numberOfMembers + "\n";
+    	output += "Name of members: " + nameOfMembers + "\n";
+    	output += "Number of Songs: " + numberOfSongs + "\n";
+    	output += "Number of Albums: " + numberOfAlbums + "\n";
+    	String bandActive;
+    	if(isActive == true){
+    		bandActive = "active";
+    	}
+    	else{
+    		bandActive = "not active";
+    	}
+    	output += "This band is " + bandActive;
+    	return output;
+    }
+    public String searchName(){
+    	String output = nameOfBand;
+    	return output;
+    }
     //...
 
     //getters
@@ -59,11 +89,6 @@ public class Band
     public String getGenre(){
     	return genreOfBand;
     }
-
-	public boolean contains(String nameOfBand2) {
-		// TODO Auto-generated method stub
-		return false;
-	}
     
     //...
 }

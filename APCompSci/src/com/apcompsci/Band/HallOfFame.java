@@ -26,18 +26,19 @@ public class HallOfFame {
 			System.out.println("Tell me the band name");
 			String nameOfBand = scan.next();
 			for(int i = 0; i <= bandList.size(); i++){
-				for (Band bandname : bandList){
-					if (bandname.contains(nameOfBand)){
+				for (Band nameO : bandList){
+					if (bandList.contains(nameOfBand)){
 						System.out.println(nameOfBand + " is in the hall of fame");
 						search();
 						break;
 					}
-					else if(!bandname.contains(nameOfBand)){
+					else if(!bandList.contains(nameOfBand)){
 						System.out.println("That band is not in the hall of fame");
 						search();
 						break;
 					}
 					else{
+						System.out.println("That band is not in the hall of fame");
 						break;
 					}
 				}
@@ -65,11 +66,11 @@ public class HallOfFame {
 	}
 	//main menu method
 	public static void hall(){
-		if (bandList.contains(null)){
+		if (bandList.size() == 0){
 			System.out.println("The hall of fame is empty");
 		}
 		else{
-			
+			System.out.println("The hall of fame has " + bandList.size() + " bands");
 		}
 		System.out.println("What would you like to do");
 		System.out.println("A: Add Band");
@@ -91,26 +92,24 @@ public class HallOfFame {
 			b1.setGenre(genreOfBand);
 			System.out.println("How many members are there in " + name + "?");
 			int numberOfMembers = scan.nextInt();
+			b1.setNumberOfMembers(numberOfMembers);
 			//asks user for each members band name
 			for(int i = 1; i <= numberOfMembers; i++){
-				String suffix = "";
-				//Following if/else statements are for appearance of code
-				if(i == 1){
-					suffix = "st";
-				}
-				else if(i == 2){
-					suffix = "nd";
-				}
-				else if(i == 3){
-					suffix = "rd";
-				}
-				else if(i >= 4){
-					suffix = "th";
-				}
-				System.out.println("What is the name of the " + i + suffix + " member");
-				String nameoMemb = scan.next();//Does not work at the moment
-				b1.setnameOfMembers(nameoMemb);
+				System.out.println("What is the name of member " + i);
+				String nameOfMemb = scan.next();//Does not work at the moment
+				b1.setnameOfMembers(nameOfMemb);
 			}
+			System.out.println("Is this band active? Y/N");
+			String active = scan.next();
+			if(active.equalsIgnoreCase("Y") || active.equalsIgnoreCase("Yes")){
+				b1.isActive(true);
+			}
+			else{
+				b1.isActive(false);
+			}
+			bandList.get(0);
+			String bandInfo = b1.toString();
+			System.out.println(bandInfo);
 			
 			
 			hall();// goes back to main menu
@@ -123,6 +122,8 @@ public class HallOfFame {
 		//removes a specific band from the hall of fame
 		else if(answer.equalsIgnoreCase("C")){
 			System.out.println("What band would you like to remove from the hall of fame");
+			String bandToEdit = scan.next();
+			
 		}
 		//erases hall of fame list
 		else if(answer.equalsIgnoreCase("D")){
@@ -145,7 +146,7 @@ public class HallOfFame {
 			System.exit(0);
 		}
 		else if(answer.equalsIgnoreCase("G")){
-			IO.openFile();//Is this neccesary
+			IO.openFile();
 		}
 		else {
 			hall();
