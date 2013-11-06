@@ -85,10 +85,7 @@ public class HallOfFame {
 			System.out.println("Tell me the band name");
 			String name = scan.next();
 			Band b1 = new Band(name);
-			bandList.add(b1);
-			for(int i = 0; i < bandList.size(); i++) {   
-				System.out.print(bandList.get(i));
-			}  
+			bandList.add(b1); 
 			System.out.println("What genre is " + name);
 			String genreOfBand = scan.next();
 			b1.setGenre(genreOfBand);
@@ -114,7 +111,6 @@ public class HallOfFame {
 				String nameoMemb = scan.next();//Does not work at the moment
 				b1.setnameOfMembers(nameoMemb);
 			}
-			System.out.println("W");
 			
 			
 			hall();// goes back to main menu
