@@ -1,5 +1,9 @@
 package com.apcompsci.Band;
 
+/**
+ * Nikhil Paranjape
+ */
+
 public class Band
 {
     //1.Class Variables    
@@ -48,15 +52,17 @@ public class Band
     public void setNameOfMembers(String names){
     	nameOfMembers = names;
     }
-    public void setnameOfMembers(String memberName){
-    	nameOfMembers = memberName;
-    }
+    
     public void setAlbums(int alb){
     	numberOfAlbums = alb;
+    }
+    public void setNumberOfSongs(int songs){
+    	numberOfSongs = songs;
     }
     public void isActive(boolean active){
     	isActive = active;
     }
+    
     public String toString(){
     	String output = "";
     	output += "Name: " + nameOfBand + "\n";
@@ -88,6 +94,18 @@ public class Band
     }
     public String getGenre(){
     	return genreOfBand;
+    }
+    public int getAlbums(){
+    	return numberOfAlbums;
+    }
+    public int getSongs(){
+    	return numberOfSongs;
+    }
+    public int getNumberOfMembers(){
+    	return numberOfMembers;
+    }
+    public boolean getActive(){
+    	return isActive;
     }
     
     //...
